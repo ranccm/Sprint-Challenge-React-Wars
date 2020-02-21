@@ -1,16 +1,23 @@
 import React from 'react';
+import {
+    Card, CardBody,
+    CardTitle, CardSubtitle
+} from 'reactstrap';
 
 const CharacterCard = (props) => {
     console.log('props here!!', props);
-    
-    return(
-        <div>
-            <h2>{props.data.name}</h2>
-            <p><strong>Birth Year:</strong>{props.data.birth_year}</p>
-            <p><strong>Height:</strong>{props.data.height} inches</p>
-            <p><strong>Mass:</strong>{props.data.mass} stones</p>
-        </div>
 
+    return (
+        <div className="characterbox">
+            <Card>
+              <CardBody>
+                <CardTitle><strong>{props.data.name}</strong></CardTitle>
+                <CardSubtitle><strong>Birth Year:</strong>{props.data.birth_year}</CardSubtitle>
+                <CardSubtitle><strong>Mass: </strong> {props.data.mass} stones</CardSubtitle>
+                <CardSubtitle><strong>Height: </strong> {props.data.height} inches</CardSubtitle>
+              </CardBody>
+            </Card>
+        </div>
     )
 }
 
